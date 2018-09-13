@@ -14,7 +14,7 @@ const messages = {
 const i18nProvider = locale => messages[locale];
 
 function getServerApi(){
-  return `${process.env.REACT_APP_API}/api`;
+  return `${process.env.REACT_APP_API}/__api`;
 }
 
 class App extends Component {

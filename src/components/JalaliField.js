@@ -8,7 +8,7 @@ JalaliField.propTypes = {
   label: PropTypes.string,
   record: PropTypes.object,
   source: PropTypes.string.isRequired,
-  showTime: PropTypes.boolean,
+  showTime: PropTypes.bool,
 };
 
 JalaliField.defaultProps = {
