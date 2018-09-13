@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Create, SimpleForm, DisabledInput, LongTextInput, TextInput, TextField, DateField, BooleanField, Datagrid, Edit, EditButton, BooleanInput, NumberInput} from 'react-admin';
+import { List, Create, SimpleForm, DisabledInput, LongTextInput, TextInput, TextField, DateField, BooleanField, Datagrid, Edit, EditButton, BooleanInput, NumberInput, ImageInput, ImageField} from 'react-admin';
 import uuidv1 from 'uuid';
 import JalaliField from '../components/JalaliField';
 
@@ -23,6 +23,9 @@ export const NewsCreate = (props) => (
       <TextInput source="title" label={"تیتر"}/>
       <LongTextInput source="description" label={"توضیح"}/>
       <LongTextInput source="body" label={"مشروح"}/>
+      <ImageInput source="pictures" multiple={true} label="عکس مربوطه" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
     </SimpleForm>
   </Create>
 );
@@ -34,6 +37,9 @@ export const NewsEdit = (props) => (
       <TextInput source="title" label={"تیتر"}/>
       <LongTextInput source="description" label={"توضیح"}/>
       <LongTextInput source="body" label={"مشروح"}/>
+      <ImageInput source="pictures" multiple={true} label="عکس مربوطه" accept="image/*">
+        <ImageField source="src" title="title" />
+      </ImageInput>
     </SimpleForm>
   </Edit>
 );

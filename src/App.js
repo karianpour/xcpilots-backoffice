@@ -5,6 +5,7 @@ import './App.css';
 import {NewsCreate, NewsEdit, NewsList} from './models/News';
 // import farsiMessages from 'ra-language-farsi';
 import farsiMessages from './farsi';
+import addUploadCapabilities from './fileUpload';
 
 const messages = {
   'fa': farsiMessages,
@@ -20,7 +21,7 @@ class App extends Component {
   render() {
     return (
       <div dir={'rtl'}>
-        <Admin locale="fa" i18nProvider={i18nProvider} title="ایکسی‌پایلوت" dataProvider={loopbackRestClient(getServerApi())}>
+        <Admin locale="fa" i18nProvider={i18nProvider} title="ایکسی‌پایلوت" dataProvider={addUploadCapabilities(loopbackRestClient(getServerApi()))}>
           <Resource options={{ label: 'اخبار' }} name="news" list={NewsList} create={NewsCreate} edit={NewsEdit} remove={Delete} />
         </Admin>
       </div>
