@@ -13,7 +13,7 @@ const messages = {
 
 const i18nProvider = locale => messages[locale];
 
-function getServerApi(){
+export function getServerApi(){
   return `${process.env.REACT_APP_API}/__api`;
 }
 

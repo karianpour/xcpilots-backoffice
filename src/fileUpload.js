@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {getServerApi} from './App';
 
 function upload(file){
   // console.log(file);
@@ -20,7 +21,7 @@ function upload(file){
 
   const formData = new FormData();
   formData.append('file', blob, file.rawFile.name);
-  return axios.post('http://localhost:3000/api/assets/upload', formData, {});
+  return axios.post(`${getServerApi()}/assets/upload`, formData, {});
 }
 
 const hasFileToUpload = (resource) => {
