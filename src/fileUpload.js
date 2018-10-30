@@ -25,7 +25,7 @@ function upload(file){
 }
 
 const hasFileToUpload = (resource) => {
-  return resource === 'news';
+  return resource === 'news' || resource === 'background';
 };
 
 const addUploadCapabilities = requestHandler => {
