@@ -25,25 +25,31 @@ function upload(file){
 }
 
 const hasFileToUpload = (resource) => {
-  return resource === 'news' || resource === 'background';
+  return resource === 'news' || resource === 'background' || resource === 'content';
+};
+
+const whatIsFileField = (resource) => {
+  if(resource === 'news' || resource === 'background') return 'pictures';
+  if(resource === 'content') return 'files';
 };
 
 const addUploadCapabilities = requestHandler => {
   return (type, resource, params) => {
     if ((type === 'CREATE' || type === 'UPDATE') && hasFileToUpload(resource)) {
-      if (params.data.pictures && params.data.pictures.length) {
-        // only freshly dropped pictures are instance of File
-        // console.log(params.data.pictures.length);
-        const formerPictures = params.data.pictures.filter(
+      const fileField = whatIsFileField(resource);
+      if (params.data[fileField] && params.data[fileField].length) {
+        // only freshly dropped pictures|files are instance of File
+        // console.log(params.data[fileField].length);
+        const formerFiles = params.data[fileField].filter(
           p => !(p.rawFile instanceof File)
         );
-        const newPictures = params.data.pictures.filter(
+        const newFiles = params.data[fileField].filter(
           p => p.rawFile instanceof File
         );
 
-        return Promise.all(newPictures.map(upload))
-          .then(function (uploadedPictures) {
-              return uploadedPictures.map(function (p) {
+        return Promise.all(newFiles.map(upload))
+          .then(function (uploadedFiles) {
+              return uploadedFiles.map(function (p) {
                 // console.log(p);
                 return ({
                   ...p.data
@@ -51,19 +57,38 @@ const addUploadCapabilities = requestHandler => {
               });
             }
           )
-          .then(function (transformedNewPictures) {
+          .then(function (transformedNewFiles) {
               return requestHandler(type, resource, {
                 ...params,
                 data: {
                   ...params.data,
-                  pictures: [
-                    ...transformedNewPictures,
-                    ...formerPictures,
+                  [fileField]: [
+                    ...transformedNewFiles,
+                    ...formerFiles,
                   ],
                 },
               });
             }
           );
+      }else if (params.data[fileField]){
+        const file = params.data[fileField];
+        if(file.rawFile instanceof File) {
+          return upload(file)
+            .then(function (uploadedFile) {
+                return {...uploadedFile.data};
+              }
+            )
+            .then(function (transformedNewFile) {
+                return requestHandler(type, resource, {
+                  ...params,
+                  data: {
+                    ...params.data,
+                    [fileField]: transformedNewFile,
+                  },
+                });
+              }
+            );
+        }
       }
     }
 

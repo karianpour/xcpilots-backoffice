@@ -24,7 +24,7 @@ export const BackgroundCreate = (props) => (
       <SelectInput source="section" label={"بخش"} choices={[
         { id: 'home', name: 'home' },
       ]}/>
-      <ImageInput source="pictures" multiple={true} label="عکس مربوطه" accept="image/*">
+      <ImageInput source="pictures" multiple={false} label="عکس مربوطه" accept="image/*">
         <ImageField source="src" title="title" />
       </ImageInput>
     </SimpleForm>
@@ -38,7 +38,7 @@ export const BackgroundEdit = (props) => (
       <SelectInput source="section" label={"بخش"} choices={[
         { id: 'home', name: 'home' },
       ]}/>
-      <ImageInput source="pictures" multiple={true} label="عکس مربوطه" accept="image/*">
+      <ImageInput source="pictures" multiple={false} label="عکس مربوطه" accept="image/*">
         <ImageField source="src" title="title" />
       </ImageInput>
     </SimpleForm>
