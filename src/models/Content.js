@@ -28,7 +28,7 @@ export const ContentCreate = (props) => (
         { id: 'glide', name: 'گلاید' },
       ]}/>
       <TextInput source="title" label={"تیتر"}/>
-      <FileInput source="files" multiple={false} label="فایل مربوطه" accept="application/pdf, audio/*">
+      <FileInput source="file" multiple={false} label="فایل مربوطه" accept="application/pdf, audio/*">
         <FileField source="src" title="title" />
       </FileInput>
     </SimpleForm>
@@ -44,7 +44,7 @@ export const ContentEdit = (props) => (
         { id: 'glide', name: 'گلاید' },
       ]}/>
       <TextInput source="title" label={"تیتر"}/>
-      <FileInput source="files" multiple={false} label="فایل مربوطه" accept="application/pdf, audio/*">
+      <FileInput source="file" multiple={false} label="فایل مربوطه" accept="application/pdf, audio/*">
         <FileField source="src" title="title" />
       </FileInput>
     </SimpleForm>

@@ -30,7 +30,7 @@ const hasFileToUpload = (resource) => {
 
 const whatIsFileField = (resource) => {
   if(resource === 'news' || resource === 'background') return 'pictures';
-  if(resource === 'content') return 'files';
+  if(resource === 'content') return 'file';
 };
 
 const addUploadCapabilities = requestHandler => {
