@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getServerApi} from './App';
 
-function upload(file){
+function upload({file, resource}){
   // console.log(file);
   // console.log(file.lastModified);
   // console.log(file.lastModifiedDate);
@@ -21,7 +21,7 @@ function upload(file){
 
   const formData = new FormData();
   formData.append('file', blob, file.rawFile.name);
-  return axios.post(`${getServerApi()}/assets/upload`, formData, {});
+  return axios.post(`${getServerApi()}/assets/upload`, formData, {params: {container: resource}});
 }
 
 const hasFileToUpload = (resource) => {
@@ -45,7 +45,7 @@ const addUploadCapabilities = requestHandler => {
         );
         const newFiles = params.data[fileField].filter(
           p => p.rawFile instanceof File
-        );
+        ).map(p => { return {file: p, resource}});
 
         return Promise.all(newFiles.map(upload))
           .then(function (uploadedFiles) {
@@ -73,7 +73,7 @@ const addUploadCapabilities = requestHandler => {
       }else if (params.data[fileField]){
         const file = params.data[fileField];
         if(file.rawFile instanceof File) {
-          return upload(file)
+          return upload({file, resource})
             .then(function (uploadedFile) {
                 return {...uploadedFile.data};
               }
