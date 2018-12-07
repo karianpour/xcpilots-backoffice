@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Create, SimpleForm, DisabledInput, TextInput, TextField, Datagrid, Edit, EditButton, FileInput, FileField, SelectField, SelectInput} from 'react-admin';
 import uuidv1 from 'uuid';
-import JalaliField from '../components/JalaliField';
+import {JalaliField} from 'ra-hichestan-datetime';
 
 export const ContentList = (props) => (
   <List title={"محتوا"} sort={{field: 'created_at', order: 'desc'}} {...props}>
