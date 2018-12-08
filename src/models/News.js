@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Create, SimpleForm, DisabledInput, LongTextInput, TextInput, TextField, Datagrid, Edit, EditButton, ImageInput, ImageField} from 'react-admin';
 import uuidv1 from 'uuid';
-import {JalaliField, JalaliInput} from 'ra-hichestan-datetime';
+import {JalaliField} from 'ra-hichestan-datetime';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 export const NewsList = (props) => (
@@ -36,7 +36,6 @@ export const NewsCreate = (props) => (
     <SimpleForm>
       <DisabledInput source="id" label={"شناسه"} defaultValue={() => uuidv1()}/>
       <TextInput source="title" label={"تیتر"}/>
-      <JalaliInput source="title" label={"تاریخ"} defaultValue={() => ''}/>
 
       <LongTextInput source="description" label={"توضیح"}/>
       <LongTextInput source="body" label={"مشروح"}/>
