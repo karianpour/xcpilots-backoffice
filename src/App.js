@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import loopbackRestClient from 'aor-loopback';
+//import loopbackRestClient from 'aor-loopback';
+import loopbackClient, { authProvider } from 'react-admin-loopback';
+
 import {Delete, Admin, Resource} from 'react-admin';
 import './App.css';
 import {NewsCreate, NewsEdit, NewsList} from './models/News';
@@ -30,6 +32,10 @@ export function getServerApi(){
   return `${process.env.REACT_APP_API}/__api`;
 }
 
+export function getServerAuthApi(){
+  return `${process.env.REACT_APP_API}/__api/users/login`;
+}
+
 const theme = createMuiTheme({
   direction: "rtl",
   typography: {
@@ -44,7 +50,7 @@ class App extends Component {
     return (
       <JssProvider jss={jss} generateClassName={generateClassName}>
       <div dir={'rtl'}>
-        <Admin theme={theme} locale="fa" i18nProvider={i18nProvider} title="ایکسی‌پایلوت" dataProvider={addUploadCapabilities(loopbackRestClient(getServerApi()))}>
+        <Admin theme={theme} locale="fa" i18nProvider={i18nProvider} title="ایکسی‌پایلوت" dataProvider={addUploadCapabilities(loopbackClient(getServerApi()))} authProvider={authProvider(getServerAuthApi())}>
           <Resource options={{ label: 'اخبار' }} name="news" list={NewsList} create={NewsCreate} edit={NewsEdit} remove={Delete} />
           <Resource options={{ label: 'پس‌زمینه' }} name="background" list={BackgroundList} create={BackgroundCreate} edit={BackgroundEdit} remove={Delete} />
           <Resource options={{ label: 'محتوا' }} name="content" list={ContentList} create={ContentCreate} edit={ContentEdit} remove={Delete} />

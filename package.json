@@ -7,7 +7,6 @@
     "prop-types": "^15.6.2"
   },
   "dependencies": {
-    "aor-loopback": "^1.3.2",
     "axios": "^0.18.0",
     "jss-rtl": "^0.2.3",
     "material-ui-hichestan-datetimepicker": "^0.1.0",
@@ -16,6 +15,7 @@
     "ra-language-farsi": "^0.2.0",
     "react": "^16.4.2",
     "react-admin": "^2.2.2",
+    "react-admin-loopback": "^1.0.1",
     "react-dom": "^16.4.2",
     "react-hichestan-datetimepicker": "^0.2.4",
     "react-scripts": "1.1.5",
