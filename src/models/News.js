@@ -2,6 +2,7 @@ import React from 'react';
 import { List, Create, SimpleForm, DisabledInput, LongTextInput, TextInput, TextField, Datagrid, Edit, EditButton, ImageInput, ImageField} from 'react-admin';
 import uuidv1 from 'uuid';
 import {JalaliField} from 'ra-hichestan-datetime';
+// import SampleSuggestInput from '../components/sample-suggest';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 export const NewsList = (props) => (
@@ -51,6 +52,7 @@ export const NewsEdit = (props) => (
   <Edit title={"ویرایش خبر"} {...props}>
     <SimpleForm>
       <DisabledInput source="id" label={"شناسه"}/>
+      {/* <SampleSuggestInput source="sample" label={"نمونه"} placeholder={"نستیبسمینتابم"}/> */}
       <TextInput source="title" label={"تیتر"}/>
       <LongTextInput source="description" label={"توضیح"}/>
       <LongTextInput source="body" label={"مشروح"}/>
