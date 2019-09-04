@@ -1,24 +1,25 @@
 {
   "name": "xcpilots-backoffice",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "devDependencies": {
-    "@babel/runtime": "7.0.0-beta.55",
     "prop-types": "^15.6.2"
   },
   "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
     "jss-rtl": "^0.2.3",
-    "material-ui-hichestan-datetimepicker": "^0.1.0",
-    "moment-jalaali": "^0.7.4",
-    "ra-hichestan-datetime": "^0.1.1",
+    "material-ui-hichestan-datetimepicker": "^3.0.2",
+    "ra-hichestan-datetime": "^0.1.4",
     "ra-language-farsi": "^0.2.0",
     "react": "^16.4.2",
     "react-admin": "^2.2.2",
     "react-admin-loopback": "^1.0.1",
     "react-dom": "^16.4.2",
-    "react-hichestan-datetimepicker": "^0.2.4",
-    "react-scripts": "1.1.5",
+    "react-hichestan-datetimepicker": "^2.0.2",
+    "react-scripts": "3.1.1",
     "uuid": "^3.3.2"
   },
   "scripts": {
@@ -26,5 +27,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

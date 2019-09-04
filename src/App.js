@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import loopbackRestClient from 'aor-loopback';
 import loopbackClient, { authProvider } from 'react-admin-loopback';
 
-import {Delete, Admin, Resource} from 'react-admin';
+import {Admin, Resource} from 'react-admin';
 import './App.css';
 import {NewsCreate, NewsEdit, NewsList} from './models/News';
 import {BackgroundCreate, BackgroundEdit, BackgroundList} from './models/Background';
@@ -51,9 +51,9 @@ class App extends Component {
       <JssProvider jss={jss} generateClassName={generateClassName}>
       <div dir={'rtl'}>
         <Admin theme={theme} locale="fa" i18nProvider={i18nProvider} title="ایکسی‌پایلوت" dataProvider={addUploadCapabilities(loopbackClient(getServerApi()))} authProvider={authProvider(getServerAuthApi())}>
-          <Resource options={{ label: 'اخبار' }} name="news" list={NewsList} create={NewsCreate} edit={NewsEdit} remove={Delete} />
-          <Resource options={{ label: 'پس‌زمینه' }} name="background" list={BackgroundList} create={BackgroundCreate} edit={BackgroundEdit} remove={Delete} />
-          <Resource options={{ label: 'محتوا' }} name="content" list={ContentList} create={ContentCreate} edit={ContentEdit} remove={Delete} />
+          <Resource options={{ label: 'اخبار' }} name="news" list={NewsList} create={NewsCreate} edit={NewsEdit} />
+          <Resource options={{ label: 'پس‌زمینه' }} name="background" list={BackgroundList} create={BackgroundCreate} edit={BackgroundEdit} />
+          <Resource options={{ label: 'محتوا' }} name="content" list={ContentList} create={ContentCreate} edit={ContentEdit} />
         </Admin>
       </div>
       </JssProvider>

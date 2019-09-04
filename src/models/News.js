@@ -2,6 +2,8 @@ import React from 'react';
 import { List, Create, SimpleForm, DisabledInput, LongTextInput, TextInput, TextField, Datagrid, Edit, EditButton, ImageInput, ImageField} from 'react-admin';
 import uuidv1 from 'uuid';
 import {JalaliField} from 'ra-hichestan-datetime';
+// import {JalaliTimeInput} from 'ra-hichestan-datetime';
+// import {JalaliInput} from 'ra-hichestan-datetime';
 // import SampleSuggestInput from '../components/sample-suggest';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
@@ -53,6 +55,8 @@ export const NewsEdit = (props) => (
     <SimpleForm>
       <DisabledInput source="id" label={"شناسه"}/>
       {/* <SampleSuggestInput source="sample" label={"نمونه"} placeholder={"نستیبسمینتابم"}/> */}
+      {/* <JalaliTimeInput source="created_at" label={"نمونه"} placeholder={"نستیبسمینتابم"}/> */}
+      {/* <JalaliInput source="created_at" label={"نمونه"} placeholder={"نستیبسمینتابم"}/> */}
       <TextInput source="title" label={"تیتر"}/>
       <LongTextInput source="description" label={"توضیح"}/>
       <LongTextInput source="body" label={"مشروح"}/>
