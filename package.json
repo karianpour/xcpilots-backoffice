@@ -12,7 +12,7 @@
     "axios": "^0.18.0",
     "jss-rtl": "^0.2.3",
     "material-ui-hichestan-datetimepicker": "^3.0.2",
-    "ra-hichestan-datetime": "^0.1.4",
+    "ra-hichestan-datetime": "^0.1.5",
     "ra-language-farsi": "^0.2.0",
     "react": "^16.4.2",
     "react-admin": "^2.2.2",
