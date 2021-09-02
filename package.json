@@ -9,7 +9,7 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "jss-rtl": "^0.2.3",
     "material-ui-hichestan-datetimepicker": "^3.0.2",
     "ra-hichestan-datetime": "^0.1.5",
