@@ -19,7 +19,7 @@
     "react-admin-loopback": "^1.0.1",
     "react-dom": "^16.13.0",
     "react-hichestan-datetimepicker": "^2.0.13",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^5.0.1",
     "uuid": "^3.4.0"
   },
   "scripts": {
